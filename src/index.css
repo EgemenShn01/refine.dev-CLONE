@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "primereact/resources/themes/lara-dark-cyan/theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+.button {
+  display: none; 
+}
+.small-menu{
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+
+}
+
+@media screen and (max-width: 768px) { /* 600 pikselden küçük ekranlar için */
+  .button {
+    display: block; /* Telefon boyutunda butonları görünür yapın */
+  }
+  .small-menu.open{
+    display: block;
+    opacity: 1;
+}
+}
+
+@media (max-width: 768px) {  
+  .dugme {
+    display: none; 
+  }
+  .logo1{
+    display: none;
+  }
+  /* .open {
+    display: inline-flex; 
+  } */
+}
+
+
+.svg{
+  text-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8); /* Işık efektini burada ayarla */
+}
+.filter{
+  backdrop-filter: blur(60px);
+}
+.white-image {
+  filter: invert(100%);
+}
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.clr{
+  background-color: rgb(84 104 255);
+}
+.shadow-inners {
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+.inner-shadow {
+  box-shadow: inset 0 0 50px rgba(148, 146, 146, 0.2); /* Renk ve boyutu isteğinize göre ayarlayabilirsiniz */
+}
+.inner-shadow1 {
+  box-shadow: inset 0 0 20px rgba(148, 146, 146, 0.2); /* Renk ve boyutu isteğinize göre ayarlayabilirsiniz */
+}
+.inner-shadow-right {
+  box-shadow: inset -20px 0 70px rgba(31, 211, 211, 0.2);
+}
+.inner-shadow-top {
+  box-shadow: inset 0 -60 170px rgba(31, 211, 211, 0.2);
+}
+  
+.slide-container {
+  display: flex;
+  transition: transform 1s ease;
+  animation: slideRight 10s linear infinite; /* Yatay kaydırma animasyonu */
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% + 35px)); /* 35px, resim genişliği */
+  }
+}
+.sub-menu {
+  display: none;
+}
+
+.dugme:hover .sub-menu {
+  display: block;
+}
